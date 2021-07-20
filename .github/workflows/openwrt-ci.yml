@@ -7,12 +7,22 @@
 #
 name: OpenWrt-CI
 
-on:
-  schedule:
-    - cron: 0 20 * * *
+on: 
   release:
     types: [published]
 
+  workflow_dispatch:
+  
+  #push:
+  #  branches: 
+  #    - master
+
+  #schedule:
+  #  - cron: 0 8 * * 5
+  
+  #watch:
+  #  types: [started]
+  
 jobs:
 
   build_openwrt:
