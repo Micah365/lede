@@ -10,6 +10,9 @@ name: OpenWrt-CI
 on: 
   release:
     types: [published]
+    
+permissions:
+  contents: read
 
   workflow_dispatch:
   
@@ -26,6 +29,9 @@ on:
 jobs:
 
   build_openwrt:
+
+    permissions:
+      contents: write # for release creation
 
     name: Build OpenWrt firmware
 
